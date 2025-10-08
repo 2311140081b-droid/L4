@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   get "application/L4"
-  get 'top/main'
-  post 'top/login'
-  root 'top#main'
+  get "top/main"
+  post "top/login"
+  root "top#main"
   get "top/logout"
 end
