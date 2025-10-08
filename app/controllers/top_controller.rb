@@ -18,4 +18,8 @@ class TopController < ApplicationController
 			render "login"
 		end
 	end
+	def logout
+		session.delete(:login_uid)
+		redirect_to root_path
+	end
 end
