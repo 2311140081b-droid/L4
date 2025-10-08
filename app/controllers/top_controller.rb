@@ -1,6 +1,9 @@
 class TopController < ApplicationController
 	def login
-		if params[:uid] == "kindai" and  params[:pass] == "sanriko" then
+		params_uid = params[:uid]
+		params_pass = params[:pass]
+		judge = Top.find_by(uid: params_uid,pass: params_pass)
+		if judge != nil then
 			session[:login_uid] = params[:uid]
 			redirect_to top_main_path
 		else
