@@ -22,12 +22,14 @@ class TopController < ApplicationController
     session.delete(:login_uid)
     redirect_to root_path
   end
-  def signin
+  def signin_submit
     params_uid = params[:uid]
     params_pass = params[:pass]
     hash_pass = BCrypt::Password.create(params_pass)
     top = Top.new(uid: params_uid, pass: hash_pass)
     top.save
     redirect_to root_path
+  end
+  def signin
   end
 end

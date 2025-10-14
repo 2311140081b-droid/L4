@@ -17,5 +17,6 @@ Rails.application.routes.draw do
   post "top/login"
   root "top#main"
   get "top/logout"
-  get "top/signin"
+  get "top/signin", to: "top#signin"
+  post "top/signin", to: "top#signin_submit"
 end
